@@ -1,35 +1,8 @@
-import s from "./index.module.sass"
-import { useEffect, useState } from "react";
+import s from "./index.module.sass";
+import { useUsers } from "./users";
 
 export default function Home() {
-
-  const [ isLoading, setIsLoading ] = useState(false)
-  const [ isError, setIsError ] = useState(false)
-  const [ users, setUsers ] = useState([])
-
-  const getUsers = async() => {
-    const url = "https://jsonplaceholder.typicode.com/users"
-    setIsLoading(true)
-
-    try {
-      const res = await fetch(url)
-      const users = await res.json()
-
-      setUsers(users)
-    } catch (error) {
-
-      setIsError(true)
-      console.error("user fetch error", error)
-
-    } finally {
-      setIsLoading(false)
-      setIsError(false)
-    }
-  }
-
-  useEffect(() => {
-    getUsers()
-  }, [])
+  const { data: users, isLoading, isError } = useUsers();
 
   const displayUsers = () => {
     if (isLoading) return (
@@ -48,13 +21,13 @@ export default function Home() {
           </div>
         ))}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className={s.root}>
       <h1 className={s.h1}>ユーザー情報一覧</h1>
       {displayUsers()}
     </div>
-  )
+  );
 }
