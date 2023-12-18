@@ -21,13 +21,13 @@ export default function Home() {
           </div>
         ))}
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className={s.root}>
       <h1 className={s.h1}>ユーザー情報一覧</h1>
       {displayUsers()}
     </div>
-  );
+  )
 }
