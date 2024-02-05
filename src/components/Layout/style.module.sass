@@ -1,0 +1,17 @@
+// ウインドウ幅が指定する値以下の場合に適用される
+=below($w)
+  @media only screen and (max-width: #{$w})
+    @content
+
+=viewS()
+  +below(599px)
+    @content
+
+.main
+  max-width: 1150px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 20px
+
+  +viewS()
+    margin-top: 43px
