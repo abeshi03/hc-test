@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Header } from "../Header";
-import s from "./style.module.sass"
+import s from "./style.module.sass";
 
 type Props = {
   children: ReactNode
