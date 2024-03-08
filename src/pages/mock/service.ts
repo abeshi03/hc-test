@@ -46,6 +46,16 @@ export const useService = () => {
     return getMockAnimals()
   }
 
+  const { data } = getAnimals()
+
+  const rabbit = (() => {
+    return data.animals.find((animal) => animal.name === "うさぎ")
+  })()
+
   return {
+    rabbit,
+    user,
+    post,
+    getAnimals
   }
 }
