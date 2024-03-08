@@ -12,6 +12,7 @@ const Top: FC = () => {
         <Link href="/users">ユーザー一覧ページへ</Link>
         <Link href="/mock">モックページへ</Link>
         <Link href="/count">カウントページ</Link>
+        <Link href="/tests">テストページ</Link>
       </div>
     </Layout>
   )
