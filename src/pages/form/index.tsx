@@ -53,11 +53,11 @@ export const FormPage: FC = () => {
                 <span className={s.formName}>名前</span>
                 <span className={s.label}>必須</span>
                 <input
+                  className={s.input}
                   type="text"
                   name="name"
                   value={name}
                   onChange={onChangeName}
-                  className={s.input}
                 />
               </label>
               {nameErrorMessage && (
@@ -70,11 +70,11 @@ export const FormPage: FC = () => {
                 <span className={s.formName}>年齢</span>
                 <span className={s.label}>必須</span>
                 <input
+                  className={s.input}
                   type="number"
                   name="age"
                   value={age}
                   onChange={onChangeAge}
-                  className={s.input}
                 />
               </label>
               {ageErrorMessage && (
@@ -82,7 +82,11 @@ export const FormPage: FC = () => {
               )}
             </div>
             <div>
-              <input type="submit" value="ボタン" className={s.submitButton} />
+              <input
+                className={s.submitButton}
+                type="submit"
+                value="ボタン"
+              />
             </div>
           </form>
         </section>
