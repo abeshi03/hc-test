@@ -1,18 +1,18 @@
 import React, {ChangeEvent, FC} from "react"
 import s from "./style.module.sass";
 
-type FormGroupProps = {
-  label: string
+type InputFieldProps = {
+  label?: string
   required?: boolean
-  value: string
+  value: string | number
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
-  type: string
+  type: "text" | "number" | "password"
   name: string
   error?: boolean
   errorMessage?: string
 }
 
-const FormGroup: FC<FormGroupProps> = ({
+const InputField: FC<InputFieldProps> = ({
   label,
   required = false,
   value,
@@ -20,7 +20,7 @@ const FormGroup: FC<FormGroupProps> = ({
   type,
   name,
   error = false,
-  errorMessage = "",
+  errorMessage,
 }) => {
   return (
     <div className={s.formItem}>
@@ -43,4 +43,4 @@ const FormGroup: FC<FormGroupProps> = ({
   )
 }
 
-export default FormGroup
+export default InputField

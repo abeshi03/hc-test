@@ -1,6 +1,6 @@
 import React, {ChangeEvent, FC, useState} from "react"
 import s from "./style.module.sass"
-import FormGroup from "./formGroup";
+import InputField from "./inputField";
 
 export const FormPage: FC = () => {
   const [name, setName] = useState("")
@@ -49,9 +49,9 @@ export const FormPage: FC = () => {
         <h1 className={s.title}>フォームのページ</h1>
         <section className={s.section}>
           <form onSubmit={onSubmit}>
-            <FormGroup
+            <InputField
               label="名前"
-              required={true}
+              required
               value={name}
               onChange={onChangeName}
               type="text"
@@ -59,9 +59,9 @@ export const FormPage: FC = () => {
               error={nameErrorMessage}
               errorMessage={nameErrorMessage}
             />
-            <FormGroup
+            <InputField
               label="年齢"
-              required={true}
+              required
               value={age}
               onChange={onChangeAge}
               type="number"
