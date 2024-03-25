@@ -1,5 +1,6 @@
 import React, {ChangeEvent, FC, useState} from "react"
 import s from "./style.module.sass"
+import InputField from "./inputField";
 
 export const FormPage: FC = () => {
   const [name, setName] = useState("")
@@ -48,39 +49,26 @@ export const FormPage: FC = () => {
         <h1 className={s.title}>フォームのページ</h1>
         <section className={s.section}>
           <form onSubmit={onSubmit}>
-            <div className={s.formItem}>
-              <label>
-                <span className={s.formName}>名前</span>
-                <span className={s.label}>必須</span>
-                <input
-                  className={s.input}
-                  type="text"
-                  name="name"
-                  value={name}
-                  onChange={onChangeName}
-                />
-              </label>
-              {nameErrorMessage && (
-                <p className={s.errorMessage}>{nameErrorMessage}</p>
-              )}
-            </div>
-
-            <div className={s.formItem}>
-              <label>
-                <span className={s.formName}>年齢</span>
-                <span className={s.label}>必須</span>
-                <input
-                  className={s.input}
-                  type="number"
-                  name="age"
-                  value={age}
-                  onChange={onChangeAge}
-                />
-              </label>
-              {ageErrorMessage && (
-                <p className={s.errorMessage}>{ageErrorMessage}</p>
-              )}
-            </div>
+            <InputField
+              label="名前"
+              required
+              value={name}
+              onChange={onChangeName}
+              type="text"
+              name="name"
+              error={nameErrorMessage}
+              errorMessage={nameErrorMessage}
+            />
+            <InputField
+              label="年齢"
+              required
+              value={age}
+              onChange={onChangeAge}
+              type="number"
+              name="age"
+              error={ageErrorMessage}
+              errorMessage={ageErrorMessage}
+            />
             <div>
               <input
                 className={s.submitButton}
