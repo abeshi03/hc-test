@@ -15,7 +15,8 @@
     "react-dom": "^18",
     "react-hook-form": "7.45.2",
     "react-query": "3.39.3",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "ts-node": "10.9.2"
   },
   "devDependencies": {
     "eslint": "^8",
