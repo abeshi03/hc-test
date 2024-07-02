@@ -17,6 +17,9 @@
     "isolatedModules": false,
     "jsx": "preserve"
   },
+  "lintOptions": {
+    "semi": false,
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",

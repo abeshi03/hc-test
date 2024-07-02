@@ -4,3 +4,14 @@
 const numbers = [100, 49, 2, 57, 13]
 
 // TODO
+function averageArray(numbers) {
+  let sum = 0
+  for(let i= 0; i < numbers.length; i++) {
+    sum += numbers[i]
+  }
+
+  let average = Math.round(sum / numbers.length)
+  return average
+}
+
+console.log(averageArray(numbers))
