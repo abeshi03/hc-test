@@ -3,3 +3,17 @@
 const numbers = [100, 200, 300, 400, 500]
 
 // TODO
+// function sumArray(numbers: number[]): number | undefined {
+//   let sum = 0
+//   for(let i= 0; i < numbers.length; i++) {
+//     sum += numbers[i]
+//   }
+//   return sum
+// }
+
+//　reduceで記述
+function sumArray(number: number[]): number | undefined {
+  return numbers.reduce((acc, current) => acc + current, 0)
+}
+
+console.log(sumArray(numbers))

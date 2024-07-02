@@ -4,3 +4,19 @@
 const numbers = [100, 49, 2, 57, 13]
 
 // TODO
+function averageArray(numbers: number[]): number | undefined {
+  let sum = 0
+  for(let i= 0; i < numbers.length; i++) {
+    sum += numbers[i]
+  }
+
+  let average = Math.round(sum / numbers.length)
+  return average
+}
+
+console.log(averageArray(numbers))
+
+//　適切にエラーを出す
+console.log(averageArray({ id: "fdasfs" }))
+console.log(averageArray("テスト"))
+console.log(averageArray([1, 3, "テスト", ["テスト"]]))
