@@ -5,3 +5,20 @@
 // 作成した関数を適当なm秒を引数にとってconsole.logで実行してください
 
 // TODO
+function formatTime(seconds: number) {
+  const formatHours = Math.floor(seconds / 3600)
+  const formatMinutes = Math.floor((seconds % 3600) / 60)
+  const formatSeconds = seconds % 60
+
+  const formatHoursStr = formatHours > 0 ? `${formatHours.toString().padStart(2, "0")}時間` : ""
+  const formatMinutesStr = `${formatMinutes.toString().padStart(2, "0")}分`
+  const formatSecondsStr = `${formatSeconds.toString().padStart(2, "0")}秒`
+
+  return`${formatHoursStr}${formatMinutesStr}${formatSecondsStr}`
+}
+
+console.log(formatTime(10))
+console.log(formatTime(100))
+console.log(formatTime(1000))
+console.log(formatTime(10000))
+console.log(formatTime(100000))
