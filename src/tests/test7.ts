@@ -4,3 +4,10 @@ const numbers = [1,2,3,4,5,6,7,8,9]
 const strings = ["hoge", "huge", "ooo"]
 
 // TODO
+const pickRandomElement = <T>(arr: T[]): T | undefined => {
+  const randomIndex = Math.floor(Math.random() * arr.length)
+  return arr[randomIndex]
+}
+
+console.log(pickRandomElement(numbers))
+console.log(pickRandomElement(strings))
